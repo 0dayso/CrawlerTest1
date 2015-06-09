@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClawlerClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetCpuPercent">
+            <summary>
+            获取cpu占用率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetMemory">
+            <summary>
+            获取内存总量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetMemoryPercent">
+            <summary>
+            获取内存占用率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetHardDiskInfoByName(System.String)">
+            <summary>
+            根据盘符获取磁盘信息
+            </summary>
+            <param name="diskName"></param>
+            <returns>一个自定义类对象</returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetAllHardDiskInfo">
+            <summary>
+            获取所有驱动盘信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetCPUFrequency">
+            <summary> 
+            获取CPU频率 
+            </summary> 
+            <returns>整型cpu频率</returns> 
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetCPUName">
+            <summary> 
+            获取CPU名称 
+            </summary> 
+            <returns>字符串型cpu名称</returns> 
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetFreeDiskSpace(System.String)">
+            <summary> 
+            磁盘空间 
+            </summary> 
+            <param name="DiskName">硬盘名称:D:或E:</param> 
+            <returns>整型</returns> 
+        </member>
+        <member name="M:ClawlerClassLibrary.MachineInfo.GetOSName">
+            <summary> 
+            获取操作系统版本 
+            </summary> 
+            <returns>操作系统版本</returns> 
+        </member>
+        <member name="M:ClawlerClassLibrary.SinASDL.GetASDLNames">
+            <summary>  
+            获取本机的拨号名称，也就是本机上所有的拨号  
+            </summary>  
+            <returns></returns>  
+        </member>
+        <member name="M:ClawlerClassLibrary.SinASDL.#ctor(System.String,System.String,System.String,System.Diagnostics.ProcessWindowStyle)">
+            <summary>  
+            实例化一个ASDL连接  
+            </summary>  
+            <param name="asdlname">ASDL名称，如“宽带连接”</param>  
+            <param name="username">用户名</param>  
+            <param name="password">密码</param>  
+            <param name="windowstyle">窗口显示方式，默认为因此拨号过程</param>  
+        </member>
+        <member name="M:ClawlerClassLibrary.SinASDL.Connect">
+            <summary>  
+            开始拨号  
+            </summary>  
+            <returns>返回拨号进程的返回值</returns>  
+        </member>
+        <member name="M:ClawlerClassLibrary.SinASDL.Disconnect">
+            <summary>  
+            端口连接  
+            </summary>  
+            <returns></returns>  
+        </member>
+        <member name="P:ClawlerClassLibrary.SinASDL.ASDLName">
+            <summary>  
+            拨号名称  
+            </summary>  
+        </member>
+        <member name="P:ClawlerClassLibrary.SinASDL.WindowStyle">
+            <summary>  
+            拨号进程的窗口方式  
+            </summary>  
+        </member>
+        <member name="P:ClawlerClassLibrary.SinASDL.Username">
+            <summary>  
+            用户名  
+            </summary>  
+        </member>
+        <member name="P:ClawlerClassLibrary.SinASDL.Password">
+            <summary>  
+            密码  
+            </summary>  
+        </member>
+        <member name="T:ClawlerClassLibrary.CrawlerClass">
+            <summary>
+            采集方法
+            </summary>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.getHtmlCode(System.String,ClawlerClassLibrary.RequestHeaders)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="requestInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.getHtmlCode(System.String,System.String)">
+            <summary>
+            获取网页源代码
+            </summary>
+            <param name="url">URL</param>
+            <param name="siteName">网站:JD,SN,YX,TM,GM,C8,N7,YMX,XD,YHD,TB</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.getTMUrlHtmlCode(System.String,System.String)">
+            <summary>
+            获取网页源代码
+            </summary>
+            <param name="url">url</param>
+            <param name="tmCookie">cookie</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.getHtmlCode(System.String,System.String,System.String)">
+            <summary>
+            获取网页源代码
+            </summary>
+            <param name="url">URL</param>
+            <param name="siteName">网站:JD,SN,YX,TM,GM,C8,N7,YMX,XD,YHD,TB</param>
+            /// <param name="strUserAgent">UserAgent</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.getHtmlCode(System.String,System.String,System.Text.Encoding,System.Net.WebProxy)">
+            <summary>
+            获取网页源代码
+            </summary>
+            <param name="url">url</param>
+            <param name="referer">referer</param>
+            <param name="charset">charset</param>
+            <param name="proxy">代理IP</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.getUrl(System.String,System.String,System.String,System.String)">
+            <summary>
+            搜索 获取URL结果列表
+            </summary>
+            <param name="urlweb">电商平台</param>
+            <param name="MCode">型号</param>
+            <param name="sppinpai">品牌</param>
+            <param name="tmCookie">天猫cookie</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.newURLPrice(System.String,System.String)">
+            <summary>
+            获取价格
+            </summary>
+            <param name="urlweb">电商平台</param>
+            <param name="urls">url</param>
+            <returns>返回价格</returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.CrawlerClass.cfBool(System.Text.RegularExpressions.MatchCollection,System.Text.RegularExpressions.MatchCollection)">
+            <summary>
+            判断两个MatchCollection数组是否相同
+            </summary>
+            <param name="resultUrl">MatchCollection 1</param>
+            <param name="lastStrings">MatchCollection 2</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:ClawlerClassLibrary.CrawlerClass.creatlog(System.String,System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:ClawlerClassLibrary.dbHelp.insertDatas(System.String)">
+            <summary>
+            修改
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClawlerClassLibrary.dbHelp.ExecuteSqlTran(System.Collections.ArrayList)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:ClawlerClassLibrary.dbHelp.selectDatas(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            查询
+            </summary>
+            <param name="sql">sql语句</param>
+            <param name="pars"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ClawlerClassLibrary.ClientInfo">
+            <summary>
+            客户端信息
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.ClientInfo.ClientID">
+            <summary>
+            客户端ID
+            </summary>
+        </member>
+        <member name="T:ClawlerClassLibrary.UrlInfo">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.urls">
+            <summary>
+            url
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.urlleibie">
+            <summary>
+            类别
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.urlweb">
+            <summary>
+            网站
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.spName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.splbPrice">
+            <summary>
+            列表价
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.spshop">
+            <summary>
+            店铺
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.saleNum">
+            <summary>
+            月销量
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.spbjpinpai">
+            <summary>
+            品牌
+            </summary>
+        </member>
+        <member name="P:ClawlerClassLibrary.UrlInfo.spbjjixing">
+            <summary>
+            机型
+            </summary>
+        </member>
+    </members>
+</doc>

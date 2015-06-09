@@ -1,0 +1,12 @@
+E:\工作\小工具\ArticleApplication\ArticleApplication\bin\Debug\ArticleApplication.exe.config
+E:\工作\小工具\ArticleApplication\ArticleApplication\bin\Debug\ArticleApplication.exe
+E:\工作\小工具\ArticleApplication\ArticleApplication\bin\Debug\ArticleApplication.pdb
+E:\工作\小工具\ArticleApplication\ArticleApplication\bin\Debug\ClawlerClassLibrary.dll
+E:\工作\小工具\ArticleApplication\ArticleApplication\bin\Debug\ClawlerClassLibrary.pdb
+E:\工作\小工具\ArticleApplication\ArticleApplication\bin\Debug\ClawlerClassLibrary.xml
+E:\工作\小工具\ArticleApplication\ArticleApplication\obj\x86\Debug\ArticleApplication.CrawlerForm.resources
+E:\工作\小工具\ArticleApplication\ArticleApplication\obj\x86\Debug\ArticleApplication.Form1.resources
+E:\工作\小工具\ArticleApplication\ArticleApplication\obj\x86\Debug\ArticleApplication.Properties.Resources.resources
+E:\工作\小工具\ArticleApplication\ArticleApplication\obj\x86\Debug\ArticleApplication.csproj.GenerateResource.Cache
+E:\工作\小工具\ArticleApplication\ArticleApplication\obj\x86\Debug\ArticleApplication.exe
+E:\工作\小工具\ArticleApplication\ArticleApplication\obj\x86\Debug\ArticleApplication.pdb

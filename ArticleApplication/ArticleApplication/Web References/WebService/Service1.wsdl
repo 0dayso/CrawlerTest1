@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectDatas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectDatasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectDatasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isDuZhan">
+        <s:complexType />
+      </s:element>
+      <s:element name="isDuZhanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isDuZhanResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSqlTran">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SQLStringList" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="cjTable" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteSqlTranResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteSqlTranResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isTableName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cjTable" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isTableNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isTableNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isTableName_URL">
+        <s:complexType />
+      </s:element>
+      <s:element name="isTableName_URLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isTableName_URLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="desTaskUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="b" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="desTaskUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="desTaskUrlResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="desTaskTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="b" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="desTaskTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="desTaskTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isHaveFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileNames" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isHaveFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerFileLength">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileNames" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerFileLengthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServerFileLengthResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUpLoadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nposs" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aa" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUpLoadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveUpLoadFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileInsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="taskPC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="urlTotal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpLoadUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpLoadUrlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ECCrawlerOK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ECCrawlerOKResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ECCrawlerIS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientNameS_" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ECCrawlerISResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ECCrawlerISResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ECCrawlerDel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientNameS_" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ECCrawlerDelResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ECUrlCrawlerOK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ECUrlCrawlerOKResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ECUrlCrawlerIS">
+        <s:complexType />
+      </s:element>
+      <s:element name="ECUrlCrawlerISResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ECUrlCrawlerISResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ECUrlCrawlerDel">
+        <s:complexType />
+      </s:element>
+      <s:element name="ECUrlCrawlerDelResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ECCrawlerINIT">
+        <s:complexType />
+      </s:element>
+      <s:element name="ECCrawlerINITResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerFileLength_Pic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileNames" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerFileLength_PicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServerFileLength_PicResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUpLoadFile_Pic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileNames" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nposs" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="aa" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUpLoadFile_PicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveUpLoadFile_PicResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="jyRar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rarName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jyPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="jyRarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jyRarResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="selectDatasSoapIn">
+    <wsdl:part name="parameters" element="tns:selectDatas" />
+  </wsdl:message>
+  <wsdl:message name="selectDatasSoapOut">
+    <wsdl:part name="parameters" element="tns:selectDatasResponse" />
+  </wsdl:message>
+  <wsdl:message name="isDuZhanSoapIn">
+    <wsdl:part name="parameters" element="tns:isDuZhan" />
+  </wsdl:message>
+  <wsdl:message name="isDuZhanSoapOut">
+    <wsdl:part name="parameters" element="tns:isDuZhanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSqlTranSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlTran" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSqlTranSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlTranResponse" />
+  </wsdl:message>
+  <wsdl:message name="isTableNameSoapIn">
+    <wsdl:part name="parameters" element="tns:isTableName" />
+  </wsdl:message>
+  <wsdl:message name="isTableNameSoapOut">
+    <wsdl:part name="parameters" element="tns:isTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="isTableName_URLSoapIn">
+    <wsdl:part name="parameters" element="tns:isTableName_URL" />
+  </wsdl:message>
+  <wsdl:message name="isTableName_URLSoapOut">
+    <wsdl:part name="parameters" element="tns:isTableName_URLResponse" />
+  </wsdl:message>
+  <wsdl:message name="desTaskUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:desTaskUrl" />
+  </wsdl:message>
+  <wsdl:message name="desTaskUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:desTaskUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="desTaskTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:desTaskTask" />
+  </wsdl:message>
+  <wsdl:message name="desTaskTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:desTaskTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="isHaveFileSoapIn">
+    <wsdl:part name="parameters" element="tns:isHaveFile" />
+  </wsdl:message>
+  <wsdl:message name="isHaveFileSoapOut">
+    <wsdl:part name="parameters" element="tns:isHaveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerFileLengthSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerFileLength" />
+  </wsdl:message>
+  <wsdl:message name="GetServerFileLengthSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerFileLengthResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveUpLoadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveUpLoadFile" />
+  </wsdl:message>
+  <wsdl:message name="SaveUpLoadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveUpLoadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:FileInsert" />
+  </wsdl:message>
+  <wsdl:message name="FileInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:FileInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:UpLoadUrl" />
+  </wsdl:message>
+  <wsdl:message name="UpLoadUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:UpLoadUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerOKSoapIn">
+    <wsdl:part name="parameters" element="tns:ECCrawlerOK" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerOKSoapOut">
+    <wsdl:part name="parameters" element="tns:ECCrawlerOKResponse" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerISSoapIn">
+    <wsdl:part name="parameters" element="tns:ECCrawlerIS" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerISSoapOut">
+    <wsdl:part name="parameters" element="tns:ECCrawlerISResponse" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerDelSoapIn">
+    <wsdl:part name="parameters" element="tns:ECCrawlerDel" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerDelSoapOut">
+    <wsdl:part name="parameters" element="tns:ECCrawlerDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ECUrlCrawlerOKSoapIn">
+    <wsdl:part name="parameters" element="tns:ECUrlCrawlerOK" />
+  </wsdl:message>
+  <wsdl:message name="ECUrlCrawlerOKSoapOut">
+    <wsdl:part name="parameters" element="tns:ECUrlCrawlerOKResponse" />
+  </wsdl:message>
+  <wsdl:message name="ECUrlCrawlerISSoapIn">
+    <wsdl:part name="parameters" element="tns:ECUrlCrawlerIS" />
+  </wsdl:message>
+  <wsdl:message name="ECUrlCrawlerISSoapOut">
+    <wsdl:part name="parameters" element="tns:ECUrlCrawlerISResponse" />
+  </wsdl:message>
+  <wsdl:message name="ECUrlCrawlerDelSoapIn">
+    <wsdl:part name="parameters" element="tns:ECUrlCrawlerDel" />
+  </wsdl:message>
+  <wsdl:message name="ECUrlCrawlerDelSoapOut">
+    <wsdl:part name="parameters" element="tns:ECUrlCrawlerDelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerINITSoapIn">
+    <wsdl:part name="parameters" element="tns:ECCrawlerINIT" />
+  </wsdl:message>
+  <wsdl:message name="ECCrawlerINITSoapOut">
+    <wsdl:part name="parameters" element="tns:ECCrawlerINITResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerFileLength_PicSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerFileLength_Pic" />
+  </wsdl:message>
+  <wsdl:message name="GetServerFileLength_PicSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerFileLength_PicResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveUpLoadFile_PicSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveUpLoadFile_Pic" />
+  </wsdl:message>
+  <wsdl:message name="SaveUpLoadFile_PicSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveUpLoadFile_PicResponse" />
+  </wsdl:message>
+  <wsdl:message name="jyRarSoapIn">
+    <wsdl:part name="parameters" element="tns:jyRar" />
+  </wsdl:message>
+  <wsdl:message name="jyRarSoapOut">
+    <wsdl:part name="parameters" element="tns:jyRarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="selectDatas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">sql  返回DataTable</wsdl:documentation>
+      <wsdl:input message="tns:selectDatasSoapIn" />
+      <wsdl:output message="tns:selectDatasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isDuZhan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查看是否已经有客户端在使用 【有人使用，返回True】</wsdl:documentation>
+      <wsdl:input message="tns:isDuZhanSoapIn" />
+      <wsdl:output message="tns:isDuZhanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSqlTran">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入数据 【经在使用 或 插入数据库失败 返回False】</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteSqlTranSoapIn" />
+      <wsdl:output message="tns:ExecuteSqlTranSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isTableName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查看当前表名是否存在，不存在则创建</wsdl:documentation>
+      <wsdl:input message="tns:isTableNameSoapIn" />
+      <wsdl:output message="tns:isTableNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isTableName_URL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查看是否存在URL表，不存在则创建</wsdl:documentation>
+      <wsdl:input message="tns:isTableName_URLSoapIn" />
+      <wsdl:output message="tns:isTableName_URLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="desTaskUrl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断与标志URL上传完成</wsdl:documentation>
+      <wsdl:input message="tns:desTaskUrlSoapIn" />
+      <wsdl:output message="tns:desTaskUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="desTaskTask">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断与标志任务分配完成</wsdl:documentation>
+      <wsdl:input message="tns:desTaskTaskSoapIn" />
+      <wsdl:output message="tns:desTaskTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isHaveFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查看当前目录下有没有本次上传文件 有则删除</wsdl:documentation>
+      <wsdl:input message="tns:isHaveFileSoapIn" />
+      <wsdl:output message="tns:isHaveFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerFileLength">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">文件的大小</wsdl:documentation>
+      <wsdl:input message="tns:GetServerFileLengthSoapIn" />
+      <wsdl:output message="tns:GetServerFileLengthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpLoadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存文件</wsdl:documentation>
+      <wsdl:input message="tns:SaveUpLoadFileSoapIn" />
+      <wsdl:output message="tns:SaveUpLoadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FileInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入数据库</wsdl:documentation>
+      <wsdl:input message="tns:FileInsertSoapIn" />
+      <wsdl:output message="tns:FileInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadUrl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下载 URLDATA</wsdl:documentation>
+      <wsdl:input message="tns:UpLoadUrlSoapIn" />
+      <wsdl:output message="tns:UpLoadUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerOK">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">设置当前【数据】客户端采集完成</wsdl:documentation>
+      <wsdl:input message="tns:ECCrawlerOKSoapIn" />
+      <wsdl:output message="tns:ECCrawlerOKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerIS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查看客户端的【数据】是否采集完成</wsdl:documentation>
+      <wsdl:input message="tns:ECCrawlerISSoapIn" />
+      <wsdl:output message="tns:ECCrawlerISSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerDel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除【数据】采集完成的标志</wsdl:documentation>
+      <wsdl:input message="tns:ECCrawlerDelSoapIn" />
+      <wsdl:output message="tns:ECCrawlerDelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerOK">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">设置当前【URL】客户端采集完成</wsdl:documentation>
+      <wsdl:input message="tns:ECUrlCrawlerOKSoapIn" />
+      <wsdl:output message="tns:ECUrlCrawlerOKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerIS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查看客户端的【URL】是否采集完成</wsdl:documentation>
+      <wsdl:input message="tns:ECUrlCrawlerISSoapIn" />
+      <wsdl:output message="tns:ECUrlCrawlerISSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerDel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除【URL】采集完成的标志</wsdl:documentation>
+      <wsdl:input message="tns:ECUrlCrawlerDelSoapIn" />
+      <wsdl:output message="tns:ECUrlCrawlerDelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerINIT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">初始化</wsdl:documentation>
+      <wsdl:input message="tns:ECCrawlerINITSoapIn" />
+      <wsdl:output message="tns:ECCrawlerINITSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerFileLength_Pic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">文件的大小</wsdl:documentation>
+      <wsdl:input message="tns:GetServerFileLength_PicSoapIn" />
+      <wsdl:output message="tns:GetServerFileLength_PicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpLoadFile_Pic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存文件</wsdl:documentation>
+      <wsdl:input message="tns:SaveUpLoadFile_PicSoapIn" />
+      <wsdl:output message="tns:SaveUpLoadFile_PicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="jyRar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">解压</wsdl:documentation>
+      <wsdl:input message="tns:jyRarSoapIn" />
+      <wsdl:output message="tns:jyRarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectDatas">
+      <soap:operation soapAction="http://tempuri.org/selectDatas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDuZhan">
+      <soap:operation soapAction="http://tempuri.org/isDuZhan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSqlTran">
+      <soap:operation soapAction="http://tempuri.org/ExecuteSqlTran" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isTableName">
+      <soap:operation soapAction="http://tempuri.org/isTableName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isTableName_URL">
+      <soap:operation soapAction="http://tempuri.org/isTableName_URL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desTaskUrl">
+      <soap:operation soapAction="http://tempuri.org/desTaskUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desTaskTask">
+      <soap:operation soapAction="http://tempuri.org/desTaskTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isHaveFile">
+      <soap:operation soapAction="http://tempuri.org/isHaveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerFileLength">
+      <soap:operation soapAction="http://tempuri.org/GetServerFileLength" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpLoadFile">
+      <soap:operation soapAction="http://tempuri.org/SaveUpLoadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileInsert">
+      <soap:operation soapAction="http://tempuri.org/FileInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadUrl">
+      <soap:operation soapAction="http://tempuri.org/UpLoadUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerOK">
+      <soap:operation soapAction="http://tempuri.org/ECCrawlerOK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerIS">
+      <soap:operation soapAction="http://tempuri.org/ECCrawlerIS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerDel">
+      <soap:operation soapAction="http://tempuri.org/ECCrawlerDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerOK">
+      <soap:operation soapAction="http://tempuri.org/ECUrlCrawlerOK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerIS">
+      <soap:operation soapAction="http://tempuri.org/ECUrlCrawlerIS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerDel">
+      <soap:operation soapAction="http://tempuri.org/ECUrlCrawlerDel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerINIT">
+      <soap:operation soapAction="http://tempuri.org/ECCrawlerINIT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerFileLength_Pic">
+      <soap:operation soapAction="http://tempuri.org/GetServerFileLength_Pic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpLoadFile_Pic">
+      <soap:operation soapAction="http://tempuri.org/SaveUpLoadFile_Pic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="jyRar">
+      <soap:operation soapAction="http://tempuri.org/jyRar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectDatas">
+      <soap12:operation soapAction="http://tempuri.org/selectDatas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDuZhan">
+      <soap12:operation soapAction="http://tempuri.org/isDuZhan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSqlTran">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteSqlTran" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isTableName">
+      <soap12:operation soapAction="http://tempuri.org/isTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isTableName_URL">
+      <soap12:operation soapAction="http://tempuri.org/isTableName_URL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desTaskUrl">
+      <soap12:operation soapAction="http://tempuri.org/desTaskUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desTaskTask">
+      <soap12:operation soapAction="http://tempuri.org/desTaskTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isHaveFile">
+      <soap12:operation soapAction="http://tempuri.org/isHaveFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerFileLength">
+      <soap12:operation soapAction="http://tempuri.org/GetServerFileLength" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpLoadFile">
+      <soap12:operation soapAction="http://tempuri.org/SaveUpLoadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileInsert">
+      <soap12:operation soapAction="http://tempuri.org/FileInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadUrl">
+      <soap12:operation soapAction="http://tempuri.org/UpLoadUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerOK">
+      <soap12:operation soapAction="http://tempuri.org/ECCrawlerOK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerIS">
+      <soap12:operation soapAction="http://tempuri.org/ECCrawlerIS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerDel">
+      <soap12:operation soapAction="http://tempuri.org/ECCrawlerDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerOK">
+      <soap12:operation soapAction="http://tempuri.org/ECUrlCrawlerOK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerIS">
+      <soap12:operation soapAction="http://tempuri.org/ECUrlCrawlerIS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECUrlCrawlerDel">
+      <soap12:operation soapAction="http://tempuri.org/ECUrlCrawlerDel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ECCrawlerINIT">
+      <soap12:operation soapAction="http://tempuri.org/ECCrawlerINIT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerFileLength_Pic">
+      <soap12:operation soapAction="http://tempuri.org/GetServerFileLength_Pic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUpLoadFile_Pic">
+      <soap12:operation soapAction="http://tempuri.org/SaveUpLoadFile_Pic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="jyRar">
+      <soap12:operation soapAction="http://tempuri.org/jyRar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://192.168.2.245:8083/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://192.168.2.245:8083/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
